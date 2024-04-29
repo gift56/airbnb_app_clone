@@ -88,7 +88,7 @@ const BookingModal = () => {
             <View style={styles.searchSection}>
               <Ionicons
                 style={styles.searchIcon}
-                name="ios-search"
+                name="search"
                 size={20}
                 color="#000"
               />

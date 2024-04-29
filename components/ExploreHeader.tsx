@@ -10,7 +10,7 @@ import { useRef, useState } from "react";
 import Colors from "@/constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
-// import * as Haptics from 'expo-haptics';
+import * as Haptics from 'expo-haptics';
 import { Link } from "expo-router";
 
 const categories = [
@@ -54,13 +54,13 @@ const ExploreHeader = ({ onCategoryChanged }: Props) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const selectCategory = (index: number) => {
-    //   const selected = itemsRef.current[index];
-    //   setActiveIndex(index);
-    //   selected?.measure((x) => {
-    //     scrollRef.current?.scrollTo({ x: x - 16, y: 0, animated: true });
-    //   });
-    //   Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    //   onCategoryChanged(categories[index].name);
+      const selected = itemsRef.current[index];
+      setActiveIndex(index);
+      selected?.measure((x) => {
+        scrollRef.current?.scrollTo({ x: x - 16, y: 0, animated: true });
+      });
+      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+      onCategoryChanged(categories[index].name);
   };
 
   return (

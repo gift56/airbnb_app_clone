@@ -1,9 +1,11 @@
 import ExploreHeader from "@/components/ExploreHeader";
 import { Stack } from "expo-router";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { View } from "react-native";
+import listingsData from '@/assets/data/airbnb-listings.json';
 
 const Homepage = () => {
+  const items = useMemo(() => listingsData as any, []);
   const [category, setCategory] = useState<string>('Tiny homes');
 
   const onDataChanged = (category: string) => {

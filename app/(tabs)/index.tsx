@@ -7,7 +7,7 @@ const Homepage = () => {
     <View style={{ flex: 1 }}>
       <Stack.Screen
         options={{
-          header: () => <ExploreHeader onCategoryChanged={onDataChanged} />,
+          header: () => <ExploreHeader onCategoryChanged={() => {}} />,
         }}
       />
     </View>
